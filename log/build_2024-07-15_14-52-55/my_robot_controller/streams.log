@@ -1,0 +1,50 @@
+[0.524s] Invoking command in '/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller': PYTHONPATH=/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build
+[0.729s] running develop
+[0.730s] /home/devil/.local/lib/python3.10/site-packages/setuptools/command/develop.py:42: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[0.730s] !!
+[0.730s] 
+[0.730s]         ********************************************************************************
+[0.730s]         Please avoid running ``setup.py`` and ``easy_install``.
+[0.730s]         Instead, use pypa/build, pypa/installer or other
+[0.730s]         standards-based tools.
+[0.730s] 
+[0.730s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[0.730s]         ********************************************************************************
+[0.730s] 
+[0.730s] !!
+[0.730s]   easy_install.initialize_options(self)
+[0.870s] Removing /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages/my-robot-controller.egg-link (link to .)
+[0.889s] Invoked command in '/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller' returned '0': PYTHONPATH=/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build
+[0.890s] Invoking command in '/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/src/my_robot_controller': PYTHONPATH=/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build install --record /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/install.log --single-version-externally-managed install_data --force
+[1.053s] running egg_info
+[1.063s] writing ../../build/my_robot_controller/my_robot_controller.egg-info/PKG-INFO
+[1.064s] writing dependency_links to ../../build/my_robot_controller/my_robot_controller.egg-info/dependency_links.txt
+[1.064s] writing entry points to ../../build/my_robot_controller/my_robot_controller.egg-info/entry_points.txt
+[1.064s] writing requirements to ../../build/my_robot_controller/my_robot_controller.egg-info/requires.txt
+[1.064s] writing top-level names to ../../build/my_robot_controller/my_robot_controller.egg-info/top_level.txt
+[1.085s] reading manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[1.086s] writing manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[1.086s] running build
+[1.086s] running build_py
+[1.086s] copying my_robot_controller/draw_circle.py -> /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build/lib/my_robot_controller
+[1.086s] copying my_robot_controller/my_first_node.py -> /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build/lib/my_robot_controller
+[1.086s] copying my_robot_controller/__init__.py -> /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build/lib/my_robot_controller
+[1.087s] running install
+[1.090s] running install_lib
+[1.100s] creating /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+[1.100s] copying /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build/lib/my_robot_controller/draw_circle.py -> /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+[1.100s] copying /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build/lib/my_robot_controller/my_first_node.py -> /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+[1.100s] copying /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build/lib/my_robot_controller/__init__.py -> /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+[1.100s] byte-compiling /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/draw_circle.py to draw_circle.cpython-310.pyc
+[1.101s] byte-compiling /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/my_first_node.py to my_first_node.cpython-310.pyc
+[1.101s] byte-compiling /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/__init__.py to __init__.cpython-310.pyc
+[1.101s] running install_data
+[1.101s] copying resource/my_robot_controller -> /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/share/ament_index/resource_index/packages
+[1.101s] copying package.xml -> /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/share/my_robot_controller
+[1.101s] running install_egg_info
+[1.112s] Copying ../../build/my_robot_controller/my_robot_controller.egg-info to /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info
+[1.112s] running install_scripts
+[1.200s] Installing draw_circle script to /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/my_robot_controller
+[1.200s] Installing test_node script to /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/my_robot_controller
+[1.200s] writing list of installed files to '/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/install.log'
+[1.216s] Invoked command in '/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/src/my_robot_controller' returned '0': PYTHONPATH=/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build install --record /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/install.log --single-version-externally-managed install_data --force

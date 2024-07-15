@@ -1,0 +1,31 @@
+[0.530s] Invoking command in '/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller': PYTHONPATH=/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build --no-deps symlink_data
+[0.743s] running develop
+[0.743s] /home/devil/.local/lib/python3.10/site-packages/setuptools/command/develop.py:42: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[0.743s] !!
+[0.743s] 
+[0.743s]         ********************************************************************************
+[0.743s]         Please avoid running ``setup.py`` and ``easy_install``.
+[0.743s]         Instead, use pypa/build, pypa/installer or other
+[0.743s]         standards-based tools.
+[0.743s] 
+[0.743s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[0.744s]         ********************************************************************************
+[0.744s] 
+[0.744s] !!
+[0.744s]   easy_install.initialize_options(self)
+[0.881s] running egg_info
+[0.891s] writing my_robot_controller.egg-info/PKG-INFO
+[0.891s] writing dependency_links to my_robot_controller.egg-info/dependency_links.txt
+[0.891s] writing entry points to my_robot_controller.egg-info/entry_points.txt
+[0.891s] writing requirements to my_robot_controller.egg-info/requires.txt
+[0.891s] writing top-level names to my_robot_controller.egg-info/top_level.txt
+[0.916s] reading manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[0.917s] writing manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[0.928s] running build_ext
+[0.928s] Creating /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages/my-robot-controller.egg-link (link to .)
+[0.928s] Installing draw_circle script to /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/my_robot_controller
+[0.929s] Installing test_node script to /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/my_robot_controller
+[0.929s] 
+[0.929s] Installed /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller
+[0.929s] running symlink_data
+[0.948s] Invoked command in '/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller' returned '0': PYTHONPATH=/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller/build --no-deps symlink_data
