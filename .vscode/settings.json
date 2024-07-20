@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller",
+        "/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/build/my_robot_controller",
+        "/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/install/my_robot_controller/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
