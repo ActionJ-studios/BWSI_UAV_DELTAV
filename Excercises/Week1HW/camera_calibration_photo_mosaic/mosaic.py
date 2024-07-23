@@ -1,15 +1,13 @@
 import cv2
 import numpy as np
 import glob
-
-# Load Calibration Parameters
 def load_calibration(calibration_file):
-    with np.load(calibration_file) as data:
-        camera_matrix = data['mtx']
-        dist_coeffs = data['dist']
-    return camera_matrix, dist_coeffs
+    data = np.load(calibration_file)
+    mtx = data["mtx"]
+    dist = data["dist"]
+    return mtx, dist
 
-# Undistort Image
+
 def undistort_image(image, camera_matrix, dist_coeffs):
     image = cv2.resize(image, (image.shape[1] // 4, image.shape[0] // 4))
     h, w = image.shape[:2]
@@ -19,26 +17,25 @@ def undistort_image(image, camera_matrix, dist_coeffs):
     undistorted_img = undistorted_img[y:y+h, x:x+w]
     return undistorted_img
 
-# Harris Corner Detection
 def harris_corner_detection(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     gray = np.float32(gray)
-    corners = cv2.cornerHarris(gray, 2, 3, 0.04)
-    corners = cv2.dilate(corners, None)
-    image[corners > 0.01 * corners.max()] = [0, 0, 255]
-    return image, corners
+    dst = cv2.cornerHarris(gray, 2, 3, 0.04)
+    dst = cv2.dilate(dst, None)
+    gray[dst > 0.01 * dst.max()] = 255
+    return np.uint8(gray)
 
-# Match Features Between Images
 def match_features(image1, image2):
     sift = cv2.SIFT_create()
+
     kp1, des1 = sift.detectAndCompute(image1, None)
     kp2, des2 = sift.detectAndCompute(image2, None)
+
     bf = cv2.BFMatcher()
     matches = bf.knnMatch(des1, des2, k=2)
-    #matches = sorted(matches, key=lambda x: x.distance)
+
     good = [m for m, n in matches if m.distance < 0.7 * n.distance]
 
-    # Build src and dst arrays
     src = []
     dst = []
     distances = []
@@ -50,31 +47,26 @@ def match_features(image1, image2):
         dst.append(dstpt)
 
         distances.append(abs(dstpt[1] - srcpt[1]))
-
-    
     least = np.array(distances) < 30
+
     least = np.tile(least, (2, 1)).T
     format_pts = lambda x: np.float32(x)[least].reshape(-1, 1, 2)
 
     return format_pts(src), format_pts(dst)
 
-# Create Mosaic
 def create_mosaic(images, camera_matrix, dist_coeffs):
-    undistorted_images = [undistort_image(img, camera_matrix, dist_coeffs) for img in images]
-    mosaic = undistorted_images[0]
-    
-    for i in range(1, len(undistorted_images)):
-        img1 = undistorted_images[i]
-        img2 = mosaic
-        img1_corners = harris_corner_detection(img1)
-        img2_corners = harris_corner_detection(img2)
-        pts1, pts2 = match_features(img1_corners, img2_corners)
-        H, _ = cv2.findHomography(pts2, pts1, cv2.RANSAC, 5.0)
-        
-        # Warp the current mosaic image
-        dst = cv2.warpPerspective(img1, H, (img1.shape[1] + mosaic.shape[1], img1.shape[0]))
-        
-        # Blend current image into mosaic
+    undistorted = [undistort_image(cv2.imread(i), camera_matrix, dist_coeffs) for i in images]
+    mosaic = undistorted[0]
+
+    for img in undistorted[1:]:
+        corners_img = harris_corner_detection(img)
+        corners_mosaic = harris_corner_detection(mosaic)
+
+        pts1, pts2 = match_features(corners_img, corners_mosaic)
+        h, _ = cv2.findHomography(pts1, pts2, cv2.RANSAC, 5.0)
+
+        dst = cv2.warpPerspective(img, h, (img.shape[1] + mosaic.shape[1], img.shape[0]))
+
         z = np.zeros((dst.shape[0], dst.shape[1] - mosaic.shape[1], 3))
         mosaic2 = np.concatenate((mosaic, z), axis=1)
 
@@ -87,24 +79,19 @@ def create_mosaic(images, camera_matrix, dist_coeffs):
     contours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     x, y, w, h = cv2.boundingRect(contours[0])
     mosaic = mosaic[y:y + h, x:x + w]
-
     return mosaic
 
-calibration_file = 'camera_calibration.npz'
-images_path = 'International Village - 50 Percent Overlap/*.jpg'
-camera_matrix, dist_coeffs = load_calibration(calibration_file)
-images = [cv2.imread(img_path) for img_path in glob.glob(images_path)]
+matrix, dist = load_calibration("camera_calibration.npz")
+images = sorted(glob.glob("International Village - 15 Percent Overlap/*.jpg"))
 
 if images:
-    mosaic_image = create_mosaic(images, camera_matrix, dist_coeffs)
-    cv2.imwrite('mosaic_image.jpg', mosaic_image)
-    mosaic_image = cv2.resize(mosaic_image, (4032//4,3024//4))
-    cv2.imshow('Mosaic', mosaic_image)
+    mosaic_image = create_mosaic(images, matrix, dist)
+    cv2.imwrite("mosaic.png", mosaic_image)
+    cv2.imshow("Mosaic", mosaic_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 else:
     print("No images found in the specified directory.")
-
 
 # 1. The 50% overlap has best feature extraction
 # 2. More overlap = better stitching since opencv has more points to match
