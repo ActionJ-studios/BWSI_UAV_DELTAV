@@ -1,1 +1,0 @@
-/home/devil/Desktop/Coding/Robotics/bwsi-uav/BWSI_UAV_DELTAV/src/my_robot_controller/setup.py
